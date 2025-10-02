@@ -12,8 +12,8 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 public class InventoryformPage {
     WebDriver driver;
 
-    @FindBy(id = "inventoryform-heading")
-    WebElement inventoryformPageTitle_id;
+    @FindBy(id = "Inventoryform-heading")
+    WebElement InventoryformPageTitle_id;
     @FindBy(id = "device-type-dropdown")
     WebElement deviceTypeDropdown_id;
     @FindBy(id = "deviceType")
@@ -34,26 +34,20 @@ public class InventoryformPage {
     WebElement quantityField_id;
     @FindBy(id = "address")
     WebElement address_id;
-    @FindBy(id="step1-pricing-summary")
+    @FindBy(id = "step1-pricing-summary")
     WebElement pricingSummary_id;
-    @FindBy(id="current-price-header")
+    @FindBy(id = "current-price-header")
     WebElement currentPrice_id;
-    @FindBy(id="unit-price-value")
+    @FindBy(id = "unit-price-value")
     WebElement unitPrice_id;
-    @FindBy(id="quantity-label")
+    @FindBy(id = "quantity-label")
     WebElement quantityLabel_id;
-    @FindBy(id="subtotal-label")
+    @FindBy(id = "subtotal-label")
     WebElement subtotalLabel_id;
-    @FindBy(id= "pricing-note")
+    @FindBy(id = "pricing-note")
     WebElement pricingNote_id;
-    @FindBy(id="next-button")
+    @FindBy(id = "next-button")
     WebElement nextButton_id;
-
-
-
-
-
-
 
 
     public InventoryformPage(WebDriver driver) {
@@ -61,10 +55,8 @@ public class InventoryformPage {
     }
 
     public void verifyInventoryformPageIsDisplayed() {
-        inventoryformPageTitle_id.isDisplayed();
+        InventoryformPageTitle_id.isDisplayed();
     }
-
-
 
 
     public void ClickDeviceTypeDropdown(String deviceType) {
@@ -102,6 +94,7 @@ public class InventoryformPage {
     public void enterQuantity(String quantity) {
         quantityField_id.sendKeys(quantity);
     }
+
     public void enterAddress(String address) {
         address_id.sendKeys(address);
     }
@@ -140,6 +133,7 @@ public class InventoryformPage {
         nextButton_id.click();
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(visibilityOf(nextButton_id));
     }
+}
 
 
 
