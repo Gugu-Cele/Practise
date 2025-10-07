@@ -18,6 +18,9 @@ public class LoginPage {
 
     @FindBy(id = "login-heading")
     WebElement loginPageTitle_id;
+    @FindBy(id="signup-toggle")
+    WebElement SignUpButton_id;
+
     @FindBy(id = "login-email")
     WebElement emailField_id;
     @FindBy(id = "login-password")
@@ -29,21 +32,33 @@ public class LoginPage {
     public LoginPage(WebDriver driver) {this.driver = driver;
     }
 
-    public void verifyLoginPageIsDisplayed() {loginPageTitle_id.isDisplayed();
+    public void verifyLoginPageIsDisplayed() {
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(visibilityOf(loginPageTitle_id));
         loginPageTitle_id.isDisplayed();
     }
 
-    public void enterEmailAddress(String email) {emailField_id.sendKeys(email);
+    public void clickSignUpToggle() {
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(visibilityOf(SignUpButton_id));
+        SignUpButton_id.click();
+    }
+
+
+
+    public void enterEmailAddress(String email) {
+        //emailField_id.sendKeys(email);
       new WebDriverWait(driver, Duration.ofSeconds(10)).until(visibilityOf(emailField_id));
+      emailField_id.clear();
         emailField_id.sendKeys(email);
 
     }
-public void enterPassword(String password) {passwordField_id.sendKeys(password);
+public void enterPassword(String password) {
+        //passwordField_id.sendKeys(password);
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(visibilityOf(passwordField_id));
+        passwordField_id.clear();
         passwordField_id.sendKeys(password);
     }
-    public void clickSubmitButton() {loginPageTitle_id.click();
+    public void clickSubmitButton() {
+        submitButton_id.click();
     }
 }
 

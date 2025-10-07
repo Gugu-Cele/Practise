@@ -27,7 +27,7 @@ public class SignupPage {
     @FindBy(id = "register-submit")
     WebElement CreateAccountButton_id;
     @FindBy(id = "register-terms")
-    WebElement TermsCheckbox_id;
+    WebElement TermsCheckboxes_id;
     @FindBy(id = "login-toggle")
     WebElement LoginButton_id;
 
@@ -65,19 +65,19 @@ public class SignupPage {
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(visibilityOf(PasswordField_id));
 
     }
-    public void enterConfirmPassword(String confirmpassword) {
-        ConfirmPasswordField_id.sendKeys(confirmpassword);
+    public void enterConfirmPassword(String confirmPassword) {
+        ConfirmPasswordField_id.sendKeys(confirmPassword);
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(visibilityOf(ConfirmPasswordField_id));
 
     }
-    public void clickSignupButton() {
+    public void clickCreateAccountButton() {
         CreateAccountButton_id.click();
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(visibilityOf(CreateAccountButton_id));
 
     }
-    public void VerifyTermsCheckboxisDisplayed() {
-        TermsCheckbox_id.isDisplayed();
-        new WebDriverWait(driver, Duration.ofSeconds(10)).until(visibilityOf(TermsCheckbox_id));
+    public void VerifyTermsCheckBoxesisDisplayed() {
+        TermsCheckboxes_id.isDisplayed();
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(visibilityOf(TermsCheckboxes_id));
 
     }
 

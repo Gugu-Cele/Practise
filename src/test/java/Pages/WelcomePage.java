@@ -12,18 +12,18 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 public class WelcomePage {
     WebDriver driver;
 
-    @FindBy(id = "practice-header")
+    @FindBy(id = "practice-heading")
     WebElement welcomePageTitle_id;
     @FindBy(id = "tab-btn-web")
     WebElement WelcomePageTitle_id;
 
 
-    public void WelcomePade(WebDriver driver) {
+    public WelcomePage (WebDriver driver) {
         this.driver = driver;
     }
 
     public void verifyWelcomePageIsDisplayed() {
-        welcomePageTitle_id.isDisplayed();
+       // welcomePageTitle_id.isDisplayed()
         new WebDriverWait(driver, Duration.ofSeconds(10)).until(visibilityOf(welcomePageTitle_id));
         WelcomePageTitle_id.isDisplayed();
     }
